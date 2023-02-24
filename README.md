@@ -19,5 +19,5 @@ Helps users practice short term memory.
 
 ## Wireframing
 
-![Wireframe Image](wireframe.png)
+![Wireframe Image](Wireframe.png)
 
