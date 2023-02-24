@@ -17,3 +17,7 @@ Goal of the game is to play 8x8 grid. Grid is made of 64 cards total, where each
 
 Helps users practice short term memory.
 
+## Wireframing
+
+![Wireframe Image](img/wireframe.png)
+
