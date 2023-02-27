@@ -24,6 +24,6 @@ Helps users practice short term memory.
 
 ## Wireframe & Domain Modeling
 
-
+![Wireframe & Domain Model](Wireframe & Map.png)
 
 
