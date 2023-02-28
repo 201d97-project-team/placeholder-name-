@@ -1,1 +1,183 @@
+* {
+  font-family: 'Montserrat', sans-serif;
 
+}
+
+header {
+  background-color: white;
+  border-style: dotted;
+  border-color: rgb(42, 42, 69);
+  border-width: 5px;
+  border-radius: 35px;
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+  color: rgb(42, 42, 69);
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+header h2 {
+  background-color: white;
+  margin: 20px;
+  font-size: 40px;
+  font-weight: 900;
+  color:hsl(21, 76%, 50%);
+}
+
+nav {
+  margin: 20px;
+  padding: 3px;
+}
+
+nav button {
+  background-color: rgb(131, 209, 209);
+  transition: .5s;
+  border-radius: 8px;
+  border-color: rgb(42, 42, 69);
+  color: rgb(42, 42, 69);
+  padding: 10px;
+  font-size: 25px;
+  font-weight: 1000;
+}
+
+nav button:hover {
+  background-color: hsl(21, 76%, 50%);
+  color: white;
+}
+
+header h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 60px;
+  margin: 15px;
+}
+
+.instructionsList h1 {
+  padding: 20px;
+  font-size: 40px;
+  rgb(42, 42, 69);
+  background-color: hsl(21, 76%, 50%);
+  border-style: dotted;
+  border-color: rgb(42, 42, 69);
+  border-width: 5px;
+  border-radius: 35px;
+  color: white;
+  }
+
+.instructionsList ol {
+  font-size: 30px; 
+  rgb(42, 42, 69);
+  padding: 20px;
+  color:rgb(42, 42, 69)
+}
+
+.instructionsList li {
+  padding: 20px;
+}
+
+.instructions {
+  float: left;
+  margin: 50px;
+  padding: 50px;
+}
+
+legend {
+ font-size: 50px;
+ color: rgb(42, 42, 69);
+}
+
+form h2 {
+  text-align: center;
+  font-weight: 900;
+  font-size: 30px;
+  background-color: rgb(239, 217, 199);
+  padding: 0px;
+  margin: 30px;
+  color: hsl(21, 76%, 50%);
+  margin-bottom: 50px;
+}
+
+label {
+  font-size: 35px;
+  color: rgb(42, 42, 69);
+  display: flex;
+  margin: 10px;
+  margin-left: 30px;
+}
+
+#userName {
+  font-size: 30px;
+  color: hsl(21, 76%, 50%);
+  padding: 10px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+}
+
+#favAnimal {
+  font-size: 30px;
+  color: hsl(21, 76%, 50%);
+  padding: 10px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  }
+
+#favColor {
+  font-size: 30px;
+  color: hsl(21, 76%, 50%);
+  padding: 10px;
+  margin-bottom: 50px;
+  margin-left: 30px;
+}
+
+form button {
+  background-color: hsl(21, 76%, 50%);
+  transition: .5s;
+  border-radius: 40px;
+  border-color: rgb(42, 42, 69);
+  color: white;
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  display: inline-block;
+  font-weight: 1000;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  display: flex;
+}
+
+form button:hover {
+  background-color: rgb(131, 209, 209);
+  color: rgb(42, 42, 69);
+}
+
+
+
+h6 {
+  text-align: center;
+  font-weight: 800;
+  font-size: 40px;
+  /* background-color: rgb(42, 42, 69); */
+  color: rgb(42, 42, 69);
+  /* color: white; */
+  margin: 10px;
+  padding: 10px;
+}
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  background-color: rgb(239, 217, 199);
+}
+
+
+footer {
+  background-color: dark rgb(42, 42, 69);
+  padding: 3px;
+  margin-left: 10px;
+  font-size: 25px;
+  font-weight: 800;
+  text-align: left;
+  color: rgb(42, 42, 69);
+}
