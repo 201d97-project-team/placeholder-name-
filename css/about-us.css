@@ -1,1 +1,147 @@
+* {
+  font-family: 'Montserrat', sans-serif;
 
+}
+
+
+header {
+  background-color: white;
+  border-style: dotted;
+  border-color: rgb(42, 42, 69);
+  border-width: 5px;
+  border-radius: 35px;
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+  color: rgb(42, 42, 69);
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+
+header h2 {
+  background-color: white;
+  margin: 20px;
+  font-size: 40px;
+  font-weight: 900;
+  color:hsl(21, 76%, 50%);
+}
+
+
+nav {
+  margin: 20px;
+  padding: 3px;
+}
+
+button {
+  background-color: rgb(131, 209, 209);
+  transition: .5s;
+  border-radius: 8px;
+  border-color: rgb(42, 42, 69);
+  color: rgb(42, 42, 69);
+  padding: 10px;
+  font-size: 25px;
+  font-weight: 1000;
+}
+
+button:hover {
+  background-color: hsl(21, 76%, 50%);
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 60px;
+}
+
+h2 {
+  text-align: center;
+  font-weight: 900;
+  font-size: 50px;
+  background-color: rgb(239, 217, 199);
+  padding: 5px;
+  margin: 50px;
+  color: rgb(42, 42, 69);
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+h5 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 25px;
+  background-color: rgb(42, 42, 69);
+  margin: 2px;
+  color: white;
+  padding: 10px;
+}
+
+h6 {
+  text-align: center;
+  font-weight: 800;
+  font-size: 40px;
+  /* background-color: rgb(42, 42, 69); */
+  color: rgb(42, 42, 69);
+  /* color: white; */
+  margin: 10px;
+  padding: 10px;
+}
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  background-color: rgb(239, 217, 199);
+}
+
+.TeamMembers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.TeamMembers div {
+  width: 25%;
+  height: 25%;
+  margin: 50px;
+  border-style: solid;
+
+  border-width: 10px;
+  border-color: rgb(131, 209, 209);
+  text-align: center;
+}
+
+.TeamMembers div:hover {
+  transform: scale(1.02);
+  transition: .5s;
+}
+
+.TeamMembers div img {
+  width: 100%;
+  max-width: 100%;
+  height: fit-content;
+}
+
+.TeamMembers div p {
+  font-size: 25px;
+  font-weight: 400;
+  text-align: center;
+  background-color: hsl(21, 76%, 50%);
+  color: white;
+  margin: 5px;
+}
+
+footer {
+  background-color: dark rgb(42, 42, 69);
+  padding: 3px;
+  font-size: 25px;
+  font-weight: 800;
+  text-align: left;
+  color: rgb(42, 42, 69);
+}
