@@ -1,1 +1,38 @@
+.container{
+  max-width: 1400px;
+  width: 1300px;
+  height: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: 15%;
+  justify-content: space-around;
+}
+/* .card{
+  position: relative;
+  transition: transform 1500ms;
+} */
 
+.front{
+  position: relative;
+  margin: 1px;
+  margin-bottom: 20px;
+  background-color: aquamarine;
+}
+/* .back{
+   position: relative;
+  margin: 1px;
+  margin-bottom: 20px;
+  background-color: rgb(127, 202, 255);
+  border-radius: 2rem;
+  box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+} */
+
+img{
+  border-radius: 50px;
+}
+
+/* .card.card:hover{
+  cursor: pointer;
+  transform: rotateY(180deg);
+} */
