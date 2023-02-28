@@ -8,16 +8,9 @@ let dogArray = [];
 
 let birdArray = [];
 
-  //this will be in content.js most likely
-
-const cardAnimals = [catArray, dogArray, birdArray];
-
-// cardColors.map((color) => {
-
 //Form Control
 
 let submissionForm = document.getElementById('submission-form');
-
 
 submissionForm.addEventListener('submit', handleSubmit);
 
@@ -56,7 +49,6 @@ function handleSubmit(event) {
 function Cards(name, color, animalArray) {
   this.name = name;
   this.color = color;
-  // myCard.style.backgroundColor = ;   //CSS DOM, not necessary.
   this.animalArray = animalArray*2;   //we can verify card match through checking for equivalent strings at decisions. 
   turnCounter = 0;
   this.renderCards();
@@ -67,15 +59,6 @@ function Cards(name, color, animalArray) {
 Cards.prototype.renderCards = function () {
   let cards = document.getElementById('card-square');
   cards.appendChild(this.color);
-};
-
-//Helper Functions
-
-// this function will randomize our array. this will be in content.js most likely
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 //Executable Code... technically this is happening inside the constructor function. save for pushing in pics of animals
