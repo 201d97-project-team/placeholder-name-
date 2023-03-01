@@ -1,38 +1,123 @@
-.container{
-  max-width: 1400px;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1{
+  /* color: azure; */
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+header {
+  background-color: white;
+  border-style: dotted;
+  border-color: rgb(42, 42, 69);
+  border-width: 5px;
+  border-radius: 35px;
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
+  color: rgb(42, 42, 69);
+  font-size: 50px;
+  font-weight: bolder;
+  width: 70%;
+  margin-left: 15%;
+}
+
+nav{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+
+/* nav {
+  margin: 20px;
+  padding: 3px;
+} */
+
+ nav button {
+  background-color: rgb(131, 209, 209);
+  transition: .5s;
+  border-radius: 8px;
+  border-color: rgb(42, 42, 69);
+  color: rgb(42, 42, 69);
+  padding: 10px;
+  font-size: 35px;
+  font-weight: 1000;
+}
+
+nav button:hover {
+  background-color: hsl(21, 76%, 50%);
+  color: white;
+}
+
+#all_cards_container{
   width: 1300px;
-  height: 800px;
+  height: 900px;
   display: flex;
   flex-wrap: wrap;
   margin: auto;
-  margin-top: 15%;
   justify-content: space-around;
-}
-/* .card{
-  position: relative;
-  transition: transform 1500ms;
-} */
-
-.front{
-  position: relative;
-  margin: 1px;
-  margin-bottom: 20px;
-  background-color: aquamarine;
-}
-/* .back{
-   position: relative;
-  margin: 1px;
-  margin-bottom: 20px;
-  background-color: rgb(127, 202, 255);
-  border-radius: 2rem;
-  box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
-} */
-
-img{
-  border-radius: 50px;
+  margin-top: 200px;
 }
 
-/* .card.card:hover{
+body{
+  background: linear-gradient(45deg, rgb(42, 42, 69), hsl(21, 76%, 50%));
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+
+.container{
+  width: 300px;
+  height: 400px;
+  perspective: 800px;
+}
+
+.container:focus > .card{
   cursor: pointer;
   transform: rotateY(180deg);
-} */
+}
+.card{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: transform 1500ms;
+  transform-style: preserve-3d;
+}
+
+
+.front, .back{
+height: 100%;
+width: 100%;
+border-radius: 2rem;
+box-shadow: 0 0 5px 2px rgb(50, 50, 50, 0.25);
+position: absolute;
+backface-visibility: hidden;
+}
+
+.front{
+  background-image: url(http://placehold.it/300x400);
+}
+
+.back{
+  background-color: bisque;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+footer {
+  background-color: dark rgb(42, 42, 69);
+  padding: 5px;
+  font-size: 25px;
+  font-weight: 800;
+  text-align: left;
+  color: white;
+}

@@ -24,6 +24,6 @@ Helps users practice short term memory.
 
 ## Wireframe & Domain Modeling
 
-![Wireframe & Domain Model](https://github.com/Memory-Gamers/memory-game/blob/8a1f6ef175386f4372181503c4880f9bf4e8b7cf/WireFrame%20&%20Map.png)
+![Wireframe & Domain Model](/img/WireFrame%20%26%20Map.png)
 
 

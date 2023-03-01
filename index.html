@@ -1,1 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="css/home.css">
+<!-- ... Google Fonts below... -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <h1>Memory Gamers</h1>
+    <h2>A Card Game To Test Your Memory</h2>
+    <nav>
+      <a href="about-us.html"><button>About Us</button></a>
+      <a href="https://github.com/Memory-Gamers/memory-game"><button>GitHub Repo</button></a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="instructions">
+        <div class="instructionsList">
+          <h1>Instructions: </h1>
+          <ol>
+            <li>After filling out your information in the form, click the Start button.</li>
+            <li>Once you're on the game page, you'll see a selection of 8 cards.</li>
+            <li>Click the cards and attempt to match them to their pair.</li>
+            <li>Once you've matched them all, the game will end and you will see your score!</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+
+    <form id="user-info">
+      <fieldset>
+        <legend>Player's Information: </legend>
+        <h2>[Make sure to read instructions before filling out!]</h2>
+
+        <label for-"userName">Name : </label>
+        <input type="text" id="userName" name="name">
+
+        <label for-"favAnimal">What's your favorite animal? : </label>
+        <select id="fav-animal" name="animal">
+          <option value="dogs">Dogs</option>
+          <option value="cats">Cats</option>
+          <option value="birds">Birds</option>
+        </select>
+
+        <label for-"favColor">What's your favorite color? : </label>
+        <select id="fav-color" name="color">
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+        </select>
+
+
+
+
+      <button type="submit">Start Game</button>
+      <!-- <a href="LINK TO GAME"><button>Start Game</button></a> -->
+    </fieldset>
+    </form>
+
+
+    <!-- <section class="deck col-2"> 
+      <div class="card">
+        <div class="copy">
+          <form id="catalog">
+            <fieldset>
+              <legend>Catalog</legend>
+              <label>
+                <span>Item</span>
+                <select id="items"></select>
+              </label>
+              <label>
+                <span>Quantity</span>
+                <input id="quantity" type="number" />
+              </label>
+              <input type="submit" value="Add To Cart" />
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <div class="card" id="cartContents"></div>
+    </section> -->
+
+
+  </main>
+  
+  <footer>
+    <p>&copy;2023 Code Fellows 201d97</p>
+  </footer>
+
+  <!-- <script src='js/content.js'></script> -->
+  <script src='js/home.js'></script>
+</body>
+
+</html>

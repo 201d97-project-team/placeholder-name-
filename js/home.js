@@ -1,71 +1,64 @@
-//Global Variables
 
-let cardArray = ['./red.jpeg','./green.jpeg','./blue.jpeg']; 
+//Form Controls
 
-let catArray = [];
-
-let dogArray = [];
-
-let birdArray = [];
-
-//Form Control
-
-let submissionForm = document.getElementById('submission-form');
-
-submissionForm.addEventListener('submit', handleSubmit);
+let submissionForm = document.getElementById('user-info');
 
 function handleSubmit(event) {
   event.preventDefault();
   
   let name = event.target.name.value;
+  if (name === ''){
+    alert('Please enter your name');
+    return;
+  }
   
-  let color = event.target.color.value; //var from inside select or option element
-  if (color === 'red') {
-    color = cardArray[0];
-  } 
-  else if (color === 'green') {
-    color = cardArray[1];
-  } 
-  else {
-      color = cardArray[2];
-  } 
-
   let animal = event.target.animal.value;
-  if (animal === 'cat') {
-    animal = catArray;
-  }
-  else if (animal === 'dog') {
-    animal = dogArray;
-  }
-  else {
-    animal = birdArray;
-  }
+  let color = event.target.color.value;
+  
 
-  let newCard = new Cards(name, color, animalArray);
+  let infoArray = [name,color,animal];
+  let stringifiedInfoArray = JSON.stringify(infoArray);
+  localStorage.setItem('userInfo',stringifiedInfoArray);
+
+  window.location.href = './content.html';
+
 }
 
-//Constructor Function
+//Executable Code
 
-function Cards(name, color, animalArray) {
-  this.name = name;
-  this.color = color;
-  this.animalArray = animalArray*2;   //we can verify card match through checking for equivalent strings at decisions. 
-  turnCounter = 0;
-  this.renderCards();
-}
+submissionForm.addEventListener('submit', handleSubmit);
 
-//Prototype Function
+// function localStorage(name, color, animal) {
+//   if (name != null || color != null || animal != null) {
+//     let infoArray = [name,color,animal];
+//     let stringifiedInfoArray = JSON.stringify(infoArray);
+//     localStorage.setItem(stringifiedInfoArray);
+//   }
+//   else{
+//     alert('Please fill out all fields');
+//   }
+// }
 
-Cards.prototype.renderCards = function () {
-  let cards = document.getElementById('card-square');
-  cards.appendChild(this.color);
-}
+  // if (animal === 'cat') {
+  //   animal = catArray;
+  // }
+  // else if (animal === 'dog') {
+  //   animal = dogArray;
+  // }
+  // else {
+  //   animal = birdArray;
+  // }
 
-//Executable Code... technically this is happening inside the constructor function. save for pushing in pics of animals
-
-catArray.push();
-dogArray.push();
-birdArray.push();
-
-
-
+  //var from inside select or option element
+  // if (color === 'red') {
+  //   color = cardArray[0];
+  // } 
+  // else if (color === 'green') {
+  //   color = cardArray[1];
+  // } 
+  // else {
+  //     color = cardArray[2];
+  // } 
+// catArray.push();
+// dogArray.push();
+// birdArray.push();
