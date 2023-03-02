@@ -112,10 +112,14 @@ function createGame() {
   let selectedCards = [];
   // Arrow function passes another function into a function... whoa... lot of functions
   cardImages.forEach((cardImage, index) => {
-    cardImage.addEventListener('click', () => {
+    cardImage.addEventListener('click', (e) => {
       // Check if the card has already been selected
       //add some sort of css property, if image clicked, apply. Make visibility hidden. 
+      // visible =document.getElementsByClassName('front');
+      // visible.style.visibility='hiddden;
+      e.target.classList.toggle('back');
       if (selectedCards.includes(index)) {
+    
         return;
       }
 
@@ -150,6 +154,48 @@ function createGame() {
 
 createGame();
 
+
+function createGame() {
+  matches=0;
+  turns=0;
+  while(matches<4){
+    let selectedCards=[];
+
+    for (let i=0; i<cardImages.length; i++) {
+      cardImages.addEventListener('click', handleClick);
+    }
+  
+    function handleClick(event){
+      console.log(event);
+      event.target.classList.toggle('back');
+     
+
+      selectedCards.push(cardImages[event.target.value]);
+      rotate = document.getElementsByClassName('back');
+      rotate.style.transform="rotateY(180deg)";
+    }
+  
+  
+  function checkForMatches(){
+    if (selectedCards.length ===2 ){
+      if (cardArray[selectedCards[0]].CardName === cardArray[selectedCards[1]].CardName){
+        matches++;
+        selectedCards =[];
+        turns++;
+        //dom that keeps cards flipped over, remove event listerners, remove class name?
+        
+        event.target.classList.toggle('back');
+      }else {
+        turns++;
+        selectedCards=[];
+      }
+  }
+  
+  }
+  }
+  alert(`Good job ${UserInfo.name}, your score is ${turns}`);
+
+}
 //Global Variables
 
 // let cardArray = ['./red.jpeg','./green.jpeg','./blue.jpeg']; 
