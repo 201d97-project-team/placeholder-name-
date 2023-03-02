@@ -98,17 +98,23 @@ backface-visibility: hidden;
 }
 
 .front{
-  /* background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%); */
+  /* backgrou
+  nd: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%); */
+  visibility:visible;
 }
 
-.back{
+.back-style{
   background-color: bisque;
-  transform: rotateY(180deg);
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 5rem;
+}
+
+.back {
+  transform: rotateY(180deg);
 }
 
 footer {
