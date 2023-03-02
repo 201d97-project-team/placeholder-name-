@@ -22,6 +22,8 @@ function Card(CardName, imageURL) {
   this.imageURL = imageURL;
 }
 
+document.getElementById
+
 const cardArray = [
   new Card('Cooldog', 'https://picsum.photos/id/237/200/300'),
   new Card('Cooldog', 'https://picsum.photos/id/237/200/300'),
