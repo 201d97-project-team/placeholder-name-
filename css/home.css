@@ -114,20 +114,26 @@ label {
   margin-left: 30px;
 }
 
-#favAnimal {
+#fav-animal {
   font-size: 30px;
-  color: hsl(21, 76%, 50%);
+  color: rgb(42, 42, 69);
   padding: 10px;
   margin-bottom: 30px;
   margin-left: 30px;
+  position: relative;
+  display: inline-block;
   }
 
-#favColor {
+#fav-color {
   font-size: 30px;
-  color: hsl(21, 76%, 50%);
+  color: rgb(42, 42, 69);
   padding: 10px;
   margin-bottom: 50px;
   margin-left: 30px;
+}
+
+.dropdown {
+  
 }
 
 form button {
