@@ -19,7 +19,7 @@ Helps users practice short term memory.
 
 ## Wireframing
 
-![Wireframe Image](Wireframe.png)
+![Wireframe Image](img/Wireframe.png)
 
 
 ## Wireframe & Domain Modeling
