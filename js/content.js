@@ -155,7 +155,7 @@ function createGame() {
 createGame();
 
 
-function createGame() {
+function x() {
   matches=0;
   turns=0;
   while(matches<4){
