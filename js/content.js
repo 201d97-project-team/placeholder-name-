@@ -59,7 +59,7 @@ function getCardArray() {
       new Card('seagull', 'img/seagull.jpg'),
       new Card('seagull', 'img/seagull.jpg'),
       new Card('penguin', 'img/penguin.jpg'),
-      new Card('pebguin', 'img/penguin.jpg'),
+      new Card('penguin', 'img/penguin.jpg'),
     ];
     console.log(cardArray);
     return cardArray;
