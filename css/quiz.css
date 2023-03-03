@@ -73,7 +73,6 @@ body{
 }
 
 .container:focus > .card{
-  cursor: pointer;
   transform: rotateY(180deg); 
 }
 
