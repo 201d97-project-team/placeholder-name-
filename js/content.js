@@ -88,16 +88,17 @@ if (userInfo.color === 'blue') {
 
 // Generate random cards
 cardArray.sort(() => 0.5 - Math.random());
+frontCard.forEach((card, i) => card.id = cardArray[i].name)
 // Good to here //
 console.log(cardArray);
 
+
+
 const cardImages = document.querySelectorAll('.AnimalImage');
 for (let i = 0; i < cardArray.length; i++) {
-  // cardImages[i].src = cardArray[i].imageURL;
-
-  console.log(cardArray[i].imageUrl);
-  let src=cardArray[i].imageUrl
+  let src = cardArray[i].imageUrl
   cardImages[i].src = src;
+  cardImages[i].id = i;
 }
 // Should place cards randomly within the each image
 // cards.forEach(card => {
@@ -107,95 +108,105 @@ for (let i = 0; i < cardArray.length; i++) {
 //   AnimalImage.appendChild(img);
 // });
 
-// Create Game function by calliing 2 cards and comparing
+// function createGame() {
+//   let selectedCards = [];
+//   // Arrow function passes another function into a function... whoa... lot of functions
+//   cardImages.forEach((cardImage, index) => {
+//     cardImage.addEventListener('click', (e) => {
+//       // Check if the card has already been selected
+//       //add some sort of css property, if image clicked, apply. Make visibility hidden. 
+//       // visible =document.getElementsByClassName('front');
+//       // visible.style.visibility='hiddden;
+//       e.target.classList.toggle('back');
+//       if (selectedCards.includes(index)) {
+
+//         return;
+//       }
+
+//       // Add the index of the selected card to the selectedCards array
+//       selectedCards.push(index);
+
+//       // Flip the card over
+//       cardImage.src = cardArray[index].imageURL;
+
+//       // Check if two cards have been selected
+//       if (selectedCards.length === 2) {
+//         // Check if the two cards match
+//         if (cardArray[selectedCards[0]].CardName === cardArray[selectedCards[1]].CardName) {
+//           /*           // Increase score and update score display
+//                     score++;
+//                     document.getElementById('score').textContent = `Score: ${score}`; */
+
+//           // Remove the selected cards from the array
+//           selectedCards = [];
+//         } else {
+//           // Flip the cards back over after a delay
+//           setTimeout(() => {
+//             cardImages[selectedCards[0]].src = "";
+//             cardImages[selectedCards[1]].src = "";
+//             selectedCards = [];
+//           }, 500);
+//         }
+//       }
+//     });
+//   });
+// }
+
+
+
 function createGame() {
+  let matches = 0;
+  let turns = 0;
   let selectedCards = [];
-  // Arrow function passes another function into a function... whoa... lot of functions
-  cardImages.forEach((cardImage, index) => {
-    cardImage.addEventListener('click', (e) => {
-      // Check if the card has already been selected
-      //add some sort of css property, if image clicked, apply. Make visibility hidden. 
-      // visible =document.getElementsByClassName('front');
-      // visible.style.visibility='hiddden;
-      e.target.classList.toggle('back');
-      if (selectedCards.includes(index)) {
-    
-        return;
+
+  console.log(cardImages);
+
+  for (let i = 0; i < cardImages.length; i++) {
+    cardImages[i].addEventListener('click', handleClick);
+    frontCard[i].addEventListener('click', handleClick);
+  }
+  console.log(cardImages);
+
+  function handleClick(event) {
+    console.log(event.target.id);
+    // event.target.classList.toggle('.container');
+
+    selectedCards.push(event.target.id);
+    //kee from clicking same card twice
+    //keep card available, 
+    checkMatches();
+
+  }
+
+
+  function checkMatches() {
+    console.log("check matchs");
+    if (selectedCards.length === 2) {
+      console.log("2 itens slected");
+      if (selectedCards[0] === selectedCards[1]) {
+        matches++;
+        selectedCards = [];
+        turns++;
+        //dom that keeps cards flipped over, remove event listerners, remove class name?
+
+        event.target.classList.toggle('back');
+      } else {
+        turns++;
+        selectedCards = [];
       }
+    }
+  }
 
-      // Add the index of the selected card to the selectedCards array
-      selectedCards.push(index);
 
-      // Flip the card over
-      cardImage.src = cardArray[index].imageURL;
 
-      // Check if two cards have been selected
-      if (selectedCards.length === 2) {
-        // Check if the two cards match
-        if (cardArray[selectedCards[0]].CardName === cardArray[selectedCards[1]].CardName) {
-          /*           // Increase score and update score display
-                    score++;
-                    document.getElementById('score').textContent = `Score: ${score}`; */
 
-          // Remove the selected cards from the array
-          selectedCards = [];
-        } else {
-          // Flip the cards back over after a delay
-          setTimeout(() => {
-            cardImages[selectedCards[0]].src = "";
-            cardImages[selectedCards[1]].src = "";
-            selectedCards = [];
-          }, 500);
-        }
-      }
-    });
-  });
+  if (matches === 4){
+    alert(`Good job ${UserInfo.name}, your score is ${turns}`);
+  };
+  
 }
 
 createGame();
-
-
-function createGame() {
-  matches=0;
-  turns=0;
-  while(matches<4){
-    let selectedCards=[];
-
-    for (let i=0; i<cardImages.length; i++) {
-      cardImages.addEventListener('click', handleClick);
-    }
-  
-    function handleClick(event){
-      console.log(event);
-      event.target.classList.toggle('back');
-     
-
-      selectedCards.push(cardImages[event.target.value]);
-      rotate = document.getElementsByClassName('back');
-      rotate.style.transform="rotateY(180deg)";
-    }
-  
-  
-  function checkForMatches(){
-    if (selectedCards.length ===2 ){
-      if (cardArray[selectedCards[0]].CardName === cardArray[selectedCards[1]].CardName){
-        matches++;
-        selectedCards =[];
-        turns++;
-        //dom that keeps cards flipped over, remove event listerners, remove class name?
-        
-        event.target.classList.toggle('back');
-      }else {
-        turns++;
-        selectedCards=[];
-      }
-  }
-  
-  }
-  }
-  alert(`Good job ${UserInfo.name}, your score is ${turns}`);
-
-}
 //Global Variables
 
 // let cardArray = ['./red.jpeg','./green.jpeg','./blue.jpeg']; 
