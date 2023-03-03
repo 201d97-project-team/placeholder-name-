@@ -39,27 +39,27 @@ function getCardArray() {
     return cardArray;
   } else if (userInfo.animal === 'cats') {
     const cardArray = [
-      new Card('dog-bone', 'img/dog-bone.png'),
-      new Card('dog-bone', 'img/dog-bone.png'),
-      new Card('pug', 'img/scared-pug.png'),
-      new Card('pug', 'img/scared-pug.png'),
-      new Card('puppies', 'img/two-puppies.png'),
-      new Card('puppies', 'img/two-puppies.png'),
-      new Card('sillyDog', 'img/white-dog.png'),
-      new Card('sillyDog', 'img/white-dog.png')
+      new Card('black-cat', 'img/black-cat.jpg'),
+      new Card('black-cat', 'img/black-cat.jpg'),
+      new Card('yawning', 'img/yawning-cat.jpg'),
+      new Card('yawning', 'img/yawning-cat.jpg'),
+      new Card('pirate', 'img/pirate-cat.jpg'),
+      new Card('pirate', 'img/pirate-cat.jpg'),
+      new Card('eyes-cat', 'img/color-eyes-cat.jpg'),
+      new Card('eyes-cat', 'img/color-eyes-cat.jpg')
     ];
     console.log(cardArray);
     return cardArray;
   } else {
     const cardArray = [
-      new Card('dog-bone', 'img/dog-bone.png'),
-      new Card('dog-bone', 'img/dog-bone.png'),
-      new Card('pug', 'img/scared-pug.png'),
-      new Card('pug', 'img/scared-pug.png'),
-      new Card('puppies', 'img/two-puppies.png'),
-      new Card('puppies', 'img/two-puppies.png'),
-      new Card('sillyDog', 'img/white-dog.png'),
-      new Card('sillyDog', 'img/white-dog.png')
+      new Card('flamingo', 'img/flamingo.jpg'),
+      new Card('flamingo', 'img/flamingo.jpg'),
+      new Card('orange', 'img/orange-bird.jpg'),
+      new Card('orange', 'img/orange-bird.jpg'),
+      new Card('seagull', 'img/seagull.jpg'),
+      new Card('seagull', 'img/seagull.jpg'),
+      new Card('penguin', 'img/penguin.jpg'),
+      new Card('pebguin', 'img/penguin.jpg'),
     ];
     console.log(cardArray);
     return cardArray;
@@ -97,10 +97,18 @@ function createGame() {
   let selectedCards = [];
 
   console.log(cardImages);
-
+  var cards = document.querySelectorAll('.card');
+  [...cards].forEach((card) => {
+    card.addEventListener('click', function () {
+      card.classList.toggle('is-flipped');
+    });
+  });
   for (let i = 0; i < cardImages.length; i++) {
     cardImages[i].addEventListener('click', handleClick);
     frontCard[i].addEventListener('click', handleClick);
+
+
+
   }
   console.log(cardImages);
 
@@ -112,7 +120,8 @@ function createGame() {
     console.log(event.target.id);
     // event.target.classList.toggle('.container');
 
-    selectedCards.push(event.target.id);
+    selectedCards.push(event.target);
+    console.log(selectedCards);
     // for (let i = 0; i < selectedCards.length; i++) {
     //   selectedCards[i].classList.remove('.container');
 
@@ -122,32 +131,47 @@ function createGame() {
 
   }
 
-//Working with the .container:focus to get first card clicked to stay turned over
+  //Working with the .container:focus to get first card clicked to stay turned over
   function checkMatches() {
     if (selectedCards.length === 2) {
-      if (selectedCards[0] === selectedCards[1]) {
-       console.log('hello');
+      console.log('hello');
+      if (selectedCards[0].id === selectedCards[1].id) {
+        console.log('hello2');
         matches++;
-        console.log("matches" + matches);
         //We need this part to iterate through the array and cat on both cards to keep flipped
-        for (let i = 0; i < selectedCards.length; i++) {
-          selectedCards[i].classList.remove('.container');
-        }
+        console.log(matches + "matches");
+        // for (let i = 0; i < selectedCards.length; i++) {
+        //   selectedCards[i].classList.toggle('.card');
+        // }
+
         selectedCards = [];
         turns++;
-        if (matches === 4){
-          alert(`Good job ${UserInfo.name}, you took ${turns} turns to win.`);
-          window.location.href = './index.html';
+        if (matches === 4) {
+          setTimeout(() => {
+            alert(`Good job ${userArray[0]}, you took ${turns} turns to win.`);
+            window.location.href = './index.html';
+          }, 4000);
+         
+          
         };
-        event.target.classList.toggle('back');
+        // event.target.classList.toggle('back');
       } else {
         turns++;
-        selectedCards = [];
+        setTimeout(() => {
+          console.log(selectedCards[0]);
+          for (let i = 0; i < selectedCards.length; i++) {
+            selectedCards[i].parentElement.parentElement.classList.toggle('is-flipped');
+            
+          }
+          selectedCards = [];
+        }, 3000);
+
       }
+      
     }
   }
-  
 }
+
 
 
 

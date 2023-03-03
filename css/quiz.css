@@ -72,8 +72,12 @@ body{
   perspective: 800px;
 }
 
-.container:focus > .card{
+/* .container:focus > .card{
   transform: rotateY(180deg); 
+} */
+
+.card.is-flipped {
+  transform: rotateY(-180deg);
 }
 
 .card{
